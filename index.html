@@ -32,17 +32,13 @@
                     <thead>
                         <tr>
                         <th colspan="2" cope="col">Task</th>
-                        <th scope="col" class="text-end">Handle</th>
+                        <th scope="col" class="text-end"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <td colspan="2">Mark</td>
-                        <td class="text-end">@mdo</td>
-                        </tr>
-                        <tr>
-                        <td colspan="2">Jacob</td>
-                        <td class="text-end">@fat</td>
+                        <tr v-for:="task in taskArr">
+                        <td colspan="2">{{task.text}}</td>
+                        <td class="text-end">X</td>
                         </tr>
                     </tbody>
                 </table>
