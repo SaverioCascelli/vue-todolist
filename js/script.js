@@ -20,10 +20,20 @@ createApp({
             ],
             inputString:"",
             deleteTaskError: '',
+            inputError: "",
         }
     },
     methods:{
-        addTask(){
+        addTask(string){
+            this.inputError = '';
+            if (this.findTask(string) ){
+            
+                this.inputError= "Task gia` presente"
+                return 
+            }else if  (!this.checkInput(string)){
+                this.inputError= "La task deve essere piu` lunga di 5";
+                return
+            }
             const newObj = {
                 text: this.inputString,
                 done: false
@@ -33,8 +43,25 @@ createApp({
         },
 
         removeTask(index){
+            index = index.trim;
             this.deleteTaskError = "";
-            this.taskArr[index].done ?  this.taskArr.splice(index,1) : this.deleteTaskError ="Can't delete undone Task"
+            this.taskArr[index].done ?  this.taskArr.splice(index,1) : this.deleteTaskError ="Can't delete uncompleted  Task"
+        },
+
+        findTask(taskText){
+            let founded = false
+            this.taskArr.forEach(task => {
+                if (task.text === taskText) {
+                    founded = true
+                }
+            });
+            return founded
+        },
+
+        checkInput(string){
+            if (string.length > 5){
+                return true
+            }else return false
         }
     }
 }).mount("#app");
