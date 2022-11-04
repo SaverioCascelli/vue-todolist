@@ -9,8 +9,29 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Vue To Do List</title>
 </head>
-<body>
+<body class="bg-secondary">
     
+    <div class="container vh-100" id="app">
+        
+        <div class="row mt-5 justify-content-between">
+            <div class="col-3 sc-logo ">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div class="col-6 d-flex align-items-start align-content-center flex-wrap">
+                <div class="input-group flex-nowrap flex-shrink-1">
+                    <input type="text" class="form-control" placeholder="New Task"  aria-describedby="addon-wrapping">
+                    <button type="button" class="btn btn-primary">Add</button>
+                </div>
+                <p class="text-danger w-100">errore input</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                
+            </div>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
