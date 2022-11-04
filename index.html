@@ -36,7 +36,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for:="task in taskArr">
+                        <tr v-for:="task in taskArr" :class="{'text-decoration-line-through' : task.done}">
                         <td colspan="2">{{task.text}}</td>
                         <td class="text-end">X</td>
                         </tr>
