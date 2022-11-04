@@ -19,8 +19,8 @@
             </div>
             <div class="col-6 d-flex align-items-start align-content-center flex-wrap">
                 <div class="input-group flex-nowrap flex-shrink-1">
-                    <input type="text" class="form-control" placeholder="New Task"  aria-describedby="addon-wrapping">
-                    <button type="button" class="btn btn-primary">Add</button>
+                    <input v-model="inputString" type="text" class="form-control" placeholder="New Task"  aria-describedby="addon-wrapping">
+                    <button type="button" @click="addTask()" class="btn btn-primary">Add</button>
                 </div>
                 <p class="text-danger w-100">errore input</p>
             </div>

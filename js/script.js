@@ -17,7 +17,19 @@ createApp({
                     text:'html main layout',
                     done: true
                 }
-            ]
+            ],
+            inputString:"",
+
+        }
+    },
+    methods:{
+        addTask(){
+            const newObj = {
+                text: this.inputString,
+                done: false
+            }
+            this.taskArr.unshift(newObj);
+            this.inputString = "";
         }
     }
 }).mount("#app");
