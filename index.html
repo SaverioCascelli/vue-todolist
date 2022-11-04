@@ -7,6 +7,7 @@
     <script src="https://unpkg.com/vue@3"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Vue To Do List</title>
 </head>
 <body class="bg-secondary">
@@ -32,13 +33,13 @@
                     <thead>
                         <tr>
                         <th colspan="2" cope="col">Task</th>
-                        <th scope="col" class="text-end"></th>
+                        <th scope="col" class="text-end text-danger">{{deleteTaskError}}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for:="task in taskArr" :class="{'text-decoration-line-through' : task.done}">
-                        <td colspan="2">{{task.text}}</td>
-                        <td class="text-end">X</td>
+                        <tr v-for:="(task, index) in taskArr" >
+                        <td colspan="2" :class="{'text-decoration-line-through' : task.done}">{{task.text}}</td>
+                        <td class="text-end" @click="removeTask(index)"><i class="bi bi-trash3"></i></td>
                         </tr>
                     </tbody>
                 </table>

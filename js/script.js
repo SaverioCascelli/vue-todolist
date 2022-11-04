@@ -19,7 +19,7 @@ createApp({
                 }
             ],
             inputString:"",
-
+            deleteTaskError: '',
         }
     },
     methods:{
@@ -30,6 +30,10 @@ createApp({
             }
             this.taskArr.unshift(newObj);
             this.inputString = "";
+        },
+
+        removeTask(index){
+            this.taskArr[index].done ?  this.taskArr.splice(index,1) : this.deleteTaskError ="Can't delete undone Task"
         }
     }
 }).mount("#app");
