@@ -33,6 +33,7 @@ createApp({
         },
 
         removeTask(index){
+            this.deleteTaskError = "";
             this.taskArr[index].done ?  this.taskArr.splice(index,1) : this.deleteTaskError ="Can't delete undone Task"
         }
     }

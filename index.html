@@ -38,7 +38,7 @@
                     </thead>
                     <tbody>
                         <tr v-for:="(task, index) in taskArr" >
-                        <td colspan="2" :class="{'text-decoration-line-through' : task.done}">{{task.text}}</td>
+                        <td colspan="2" @click="task.done = !task.done" :class="{'text-decoration-line-through' : task.done}">{{task.text}}</td>
                         <td class="text-end" @click="removeTask(index)"><i class="bi bi-trash3"></i></td>
                         </tr>
                     </tbody>
