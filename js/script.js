@@ -35,7 +35,7 @@ createApp({
                 return
             }
             const newObj = {
-                text: this.inputString,
+                text: string,
                 done: false
             }
             this.taskArr.unshift(newObj);
@@ -43,9 +43,8 @@ createApp({
         },
 
         removeTask(index){
-            index = index.trim;
             this.deleteTaskError = "";
-            this.taskArr[index].done ?  this.taskArr.splice(index,1) : this.deleteTaskError ="Can't delete uncompleted  Task"
+            this.taskArr[index].done ?  this.taskArr.splice(index,1) : this.deleteTaskError ="Can't delete uncompleted  Task";
         },
 
         findTask(taskText){
